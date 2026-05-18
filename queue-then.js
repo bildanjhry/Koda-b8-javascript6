@@ -26,9 +26,13 @@ handleQueue(1500, "John").then((name)=> {
    console.log(name)
    handleQueue(2000, "Ed").then((name)=> {
         console.log(name)
-        handleQueue(500, "Jane").then((name)=> {
+        handleQueue("500", "Jane").then((name)=> {
             console.log(name)
+        }).catch((err) => {
+            console.log(`Error: ${err}`)
         })
+   }).catch((err) => {
+        console.log(`Error: ${err}`)
    })
 }).catch((err) => {
     console.log(`Error: ${err}`)
